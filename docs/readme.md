@@ -9,7 +9,10 @@ TrafficSystemMock is an program that simulates traffic, you can:
 
 - ![Demo Img](<TrafficSystemMock Demo 20230714_230239Z Intro .png>)
 
-- Demo Vid <video src="TrafficSystemMock%20Demo%2020230714_225153%20Intro%20.mp4" controls title="Demo Vid"></video>
+- Demo Vid [//]: <> (<video src="TrafficSystemMock%20Demo%2020230714_225153%20Intro%20.mp4" controls title="Demo Vid"></video>)
+  
+  https://github.com/Norlandz/TrafficSystemMockJs/assets/43581880/8f398aa4-3583-44d4-a2b6-dd18501f871f
+
 
 ### how to use
 
