@@ -1,0 +1,194 @@
+@mixin height100Percent() {
+  // height: 100%;
+  // overflow: auto; 
+  // height: max-content;
+  // min-height: 100%;
+  // []
+  // Instead of setting height property, use min-height.
+  // <>
+  // https://stackoverflow.com/questions/384145/expanding-a-parent-div-to-the-height-of-its-children
+}
+
+// @mixin height100Percent02() {
+//   height: 100%;
+//   // min-height: 100vh;
+// }
+
+html {
+  // min-height: 100vh; // say min dk & those that works.. 
+  @include height100Percent();
+  // border: 1px solid purple;
+
+  position: relative; // actually need this .. otherwise the absolut will just go with viewport seems
+}
+
+body {
+  @include height100Percent();
+  // border: 1px solid grey;
+}
+
+// #root { // #root, .App { body > #root { :root
+//   @include height100Percent();
+//   border: 1px solid green;
+// }
+// 
+// // must do it in html ...
+
+
+// ########
+
+.wholeBodyPanel {
+  position: relative;
+
+  display: flex; // display: flexbox; // version
+  flex-direction: row;
+  flex-wrap: nowrap;
+  // align-content: center;
+  justify-content: space-between;
+  // align-items: flex-start;
+  align-items: stretch; // for the height 
+  // []
+  // You can just set display: flex; align-items: stretch;
+  // <>
+  // https://stackoverflow.com/questions/1122381/how-to-force-child-div-to-be-100-of-parent-divs-height-without-specifying-pare
+
+
+  // display: grid;
+  // // grid-template-columns: repeat($grid_num_col, minmax(0, 1fr));
+  // // grid-template-columns: 150px 1fr 200px; // dk css . .......... // <see [min-width: 60%; // ee
+
+  @include height100Percent();
+  border: 1px solid blue;
+}
+
+// ########
+
+.leftNavigationPanelGrand {
+  // for hide button
+  // grid-column: 1;
+
+  @include height100Percent();
+
+  .leftNavigationPanel {
+    width: 150px;
+    @include height100Percent();
+    height: 100%;
+    border: 1px solid black;
+
+    // position: absolute;
+    // width: $width_leftNavigationPanel;
+  }
+}
+
+// ########
+
+.mainContentPanel {
+  position: relative;
+
+  flex-grow: 1;
+  // grid-column: 2;
+  min-width: 60%; // ee
+  @include height100Percent();
+
+  // overflow: auto; // dk why only this one works .. 
+  // height: max-content;
+
+  border: 1px solid black;
+
+  // ########
+
+  .mapCombinedPanel {
+    @include height100Percent();
+
+    // overflow: auto; 
+    pre.codeOutputLarge {
+      max-width: 700px;
+      max-height: 700px;
+
+      // overflow-x: visible; // not possible https://stackoverflow.com/questions/13873651/visible-overflow-in-one-direction-with-scrolling-in-the-other-direction
+      overflow-y: scroll;
+      // resize: both;
+    }
+
+    // pre.codeOutputLarge:hover {
+    //   overflow: visible;
+    // }
+
+    // ##
+
+    .topCombinedNavigationPanel {
+      // grid-row: 1;
+      // grid-column: #{1} / #{$grid_num_col + 1};
+
+      display: flex;
+      justify-content: space-evenly;
+      border: 1px solid black;
+    }
+
+    // ##
+
+    $grid_num_col: 12;
+
+    .mapOverviewPanel {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat($grid_num_col, minmax(0, 1fr));
+      // grid-template-rows: 20px repeat(2, minmax(0,1fr));
+
+      @include height100Percent();
+
+      // ##
+      img {
+        max-width: 100%;
+      }
+
+      // ##
+      $width_overviewMapPanel: 8;
+
+      .overviewMapPanel {
+        grid-row: 1;
+        grid-column: #{1} / #{$width_overviewMapPanel};
+
+      }
+
+      .overviewDetectorPanel {
+        grid-row: 1;
+        grid-column: #{$width_overviewMapPanel} / #{$grid_num_col + 1};
+
+        // max-width: 700px;
+        overflow: scroll;
+        resize: both;
+      }
+
+      .overviewVehiclePanel {
+        grid-row: 2;
+        grid-column: #{1} / #{$grid_num_col + 1};
+
+      }
+    }
+
+    // ##
+
+    .mapContentPanel {
+
+      // ##
+      img {
+        max-width: 100%;
+      }
+    }
+
+  }
+}
+
+// ########
+
+.rightSearchPanel {
+  // min-width: 100px;
+  // max-width: 250px;
+  // width: max-content;
+
+  // grid-column: 3;
+  @include height100Percent();
+
+  border: 1px solid black;
+}
