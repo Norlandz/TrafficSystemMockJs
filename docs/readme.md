@@ -60,3 +60,9 @@ TrafficSystemMock is an program that simulates traffic, you can:
   - design webpage app in React; communication bt Javascript & Java;
 
 - *(will fix the project naming problem)*
+
+### related projects
+
+- https://github.com/Norlandz/TrafficSystem
+- https://github.com/Norlandz/TrafficSystemMock
+- https://github.com/Norlandz/TrafficSystemMockJs
